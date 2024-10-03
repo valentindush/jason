@@ -2,10 +2,11 @@
   "name": "jason",
   "version": "1.0.0",
   "description": "A CLI tool to generate JSON data using Groq Llama3 via Groq",
-  "main": "index.js",
+  "main": "index.mjs",
   "bin": {
-    "jason": "./index.js"
+    "jason": "./index.mjs"
   },
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
