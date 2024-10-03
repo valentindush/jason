@@ -1,0 +1,23 @@
+{
+  "name": "jason",
+  "version": "1.0.0",
+  "description": "A CLI tool to generate JSON data using Groq Llama3 via Groq",
+  "main": "index.js",
+  "bin": {
+    "jason": "./index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["jason", "json", "json-gpt", "json generator"],
+  "author": {
+    "name": "dush",
+    "email": "codesvalentin@gmail.com"
+  },
+  "license": "Apache-2.0",
+  "dependencies": {
+    "commander": "^12.1.0",
+    "configstore": "^7.0.0",
+    "groq-sdk": "^0.7.0"
+  }
+}
