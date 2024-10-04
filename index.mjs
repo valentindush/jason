@@ -9,8 +9,12 @@ import packageJson from './package.json' assert {type: "json"}
 import { generateJSON } from './util/index.mjs'
 import chalk from 'chalk'
 import ora from 'ora'
+import { colorize } from 'json-colorizer'
 
 const config = new Configstore(packageJson.name)
+
+const log = console.log
+const error = console.error
 
 program
   .version(packageJson.version)
@@ -20,7 +24,7 @@ program.command('set-api-key <key>')
   .description('Set the Groq API key')
   .action((key) => {
     config.set('apiKey', key)
-    console.log('API key set successfully')
+    log(chalk.green('API key set successfully'))
   });
 
 program.command('generate')
@@ -31,7 +35,7 @@ program.command('generate')
   .action(async (options) => {
     const apiKey = config.get('apiKey')
     if (!apiKey) {
-      console.error(chalk.red('Error: Groq API key not set. Use "jason set-api-key <api-key>" to set your Groq API key.'))
+      error(chalk.red('Error: Groq API key not set. Use "jason set-api-key <api-key>" to set your Groq API key.'))
       process.exit(1)
     }
 
@@ -45,14 +49,14 @@ program.command('generate')
 
       if(options.output){
         writeFileSync(options.output, JSON.stringify(generatedData, null, 2));
-        console.log(chalk.green(`\nGenerated JSON data written to ${options.output}`));
+        log(chalk.green(`\nGenerated JSON data written to ${options.output}`));
       } else {
-        console.log(chalk.cyan('\nGenerated JSON data: \n'))
-        console.log(chalk.yellow(JSON.stringify(generatedData, null, 2)))
+        log(chalk.cyan('\nGenerated JSON data: \n'))
+        log(colorize(JSON.stringify(generatedData, null, 2)))
       }
     } catch (error) {
       spinner.fail('Error generating JSON data')
-      console.error(chalk.red('Error:', error.message));
+      error(chalk.red('Error:', error.message));
       process.exit(1);
     }
   });

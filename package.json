@@ -26,6 +26,7 @@
     "commander": "^12.1.0",
     "configstore": "^7.0.0",
     "groq-sdk": "^0.7.0",
+    "json-colorizer": "^3.0.1",
     "ora": "^8.1.0"
   }
 }
