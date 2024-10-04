@@ -1,5 +1,5 @@
 {
-  "name": "jason",
+  "name": "@dushv/jason",
   "version": "1.0.0",
   "description": "A CLI tool to generate JSON data using Groq Llama3 via Groq",
   "main": "index.mjs",
