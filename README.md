@@ -5,7 +5,7 @@ A simple CLI tool for generating json output & files using LLMs
 ### Installation
 jason can be easily used via `npm`
 ```bash
-npm install -g @dush/jason
+npm install -g @dushv/jason
 ```
 ### Set Groq API key
 jason uses Groq API to access Llama 3 
