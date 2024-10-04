@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 
 import { writeFileSync } from 'fs'
-import path from 'path'
 import { program } from 'commander'
 import Groq from 'groq-sdk'
 import Configstore from 'configstore'
